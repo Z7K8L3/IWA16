@@ -68,7 +68,7 @@ const data = {
 // Only edit below this comment
 
 const createHtml = athlete => {
-  const {firstName, surname, id, races} = data.response[athlete];
+  const {firstName, surname, id, races} = data.response.data[athlete];
   const {date, time} = races[races.length - 1];
 
   const fragment = document.createDocumentFragment();
@@ -100,7 +100,7 @@ const createHtml = athlete => {
       <dd>${day} ${month} ${year}</dd>
   
       <dt>Total Time (Latest)</dt>
-      <dd>${hours.toString().padStart(2, "0")}: ${minutes
+      <dd>${hours.toString().padStart(2, "0")}:${minutes
     .toString()
     .padStart(2, "0")}</dd>
     `;
